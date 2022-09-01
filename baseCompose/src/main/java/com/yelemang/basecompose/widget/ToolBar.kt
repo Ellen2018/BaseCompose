@@ -27,7 +27,9 @@ fun ToolBar(
     rightPadding:Int = 13,
     @SuppressLint("ModifierParameter") modifier: Modifier = Modifier,
     titleTextSize:Int = 18,
-    rightTextSize:Int = 14
+    rightTextSize:Int = 14,
+    titleColor:Color = Color.White,
+    rightTextColor:Color = Color.White
 ) {
     Box(
         modifier = modifier
@@ -44,7 +46,7 @@ fun ToolBar(
         Text(
             text = title,
             modifier = Modifier.align(Alignment.Center),
-            color = Color.White,
+            color = titleColor,
             textAlign = TextAlign.Center,
             fontSize = titleTextSize.sp
         )
@@ -57,7 +59,7 @@ fun ToolBar(
                     .clickable {
                         rightClick?.invoke()
                     },
-                color = Color.White,
+                color = rightTextColor,
                 textAlign = TextAlign.Center,
                 fontSize = rightTextSize.sp
             )
